@@ -1,0 +1,33 @@
+JavaScript Calculator with Keypad Input
+This project is a simple JavaScript calculator that allows users to input mathematical expressions through a custom keypad interface. The calculator supports basic arithmetic operations, percentages, square roots, toggling between positive and negative values, and can recall the previous answer.
+
+Features
+Basic Operations: Addition, subtraction, multiplication, and division.
+Percentage Calculation: Automatically interprets numbers followed by % as percentages.
+Square Root Calculation: Recognizes expressions starting with √ and evaluates them as square roots.
+Clear and Delete: Clear the entire input or delete the last character.
+Previous Answer Recall: Use the result of the last calculation in the current expression.
+Positive/Negative Toggle: Toggle between positive and negative values for the current input.
+Code Structure
+The core of the functionality is handled within an event listener that responds to button clicks on the custom keypad. Below are the primary parts of the code:
+
+Variables
+keys: Selects all elements with the .key class representing calculator buttons.
+inputBox: Represents the input field where the user sees the current expression.
+previous: Displays the previous expression before calculating the result.
+inputString: Holds the current input as a string to be evaluated.
+previousAnswer: Stores the answer of the last calculation for future recall.
+Button Event Handling
+The code uses a forEach loop to attach click event listeners to each button in keys. Based on the button ID (btn.id), it performs specific actions:
+
+Clear Button (id="clear"): Clears all input from the inputBox and previous.
+Delete Button (id="del"): Deletes the last character in inputString.
+Equal Button (id="="):
+Displays the current expression in the previous element.
+Replaces % with division by 100 for percentage calculations.
+Replaces √ followed by a number with Math.sqrt(number) for square root calculations.
+Evaluates the expression using eval() and displays the result in inputBox.
+Stores the result in previousAnswer.
+Answer Recall (id="ans"): Appends the previousAnswer to the current expression.
+Positive/Negative Toggle (id="+/-"): Toggles the sign of the current input.
+Other Inputs: Appends numbers and operators to inputString and displays it in inputBox.
